@@ -1,83 +1,28 @@
-# CS205_PROJECT1
+# CS205_PROJECT 2
 ### Name: Dhananjay Gavade
 ### SID: 862395404
 ### email: dgava001@ucr.edu
+### Name: Ajay Wayase
+### SID: 862394912
+### email: awaya001@ucr.edu
 
 #### Code Exection Steps:
 
-1. Enter puzzle in input.txt.
-2. If you want to change goal state, write in goal.txt
-3. Run ai_project1.py or use the notebook AI_Project1.ipynb
+1. Execute feature_search.py
+2. Specify file. (for real world dataset specify real_world_rice_data.csv)
+3. Use the notebook Project_2_AI.ipynb
+#### Requirements:
+1. scipy - for reading real world dataset which is in arff format (command- pip install scipy)
+2. scikitlearn - for label encoding (command- !pip3 install scikit-learn)
+3. numpy -  for vectorization of nearest neighbour function (command- !pip3 install numpy)
 
 #### Algorithms:
-##### Uniform Cost Search: 
-Implemented general search algorithm which considers h(n)=0 for uniform cost search. I have used heapq to store the nodes and numpy array to store the states. 'general_search' function takes the puzzle as input and uses 'operator' list to expand nodes based on given operations. User can customize the sequence of these operators in the list. Change of sequence may result in different results.
-##### A* Misplaced Tiles:
-This algorithm is implemented by using a heuristic function that calculates the count of misplaced tiles and passes the heuristic value to general_search. Count is calculated using numpy's array comparison and sum function in a single line. While checking the misplaced tiles, blank tile is ignored in the count.
+##### Nearest Neighbour: 
+Nearest Neighbor is an instance-based classification algorithm. In this algorithm model makes decisions based on similarity between new input and training examples. The idea behind the nearest neighbor algorithm is that we should find nearest neighbors for new inputs. The algorithm considers that the points that are close to each other in the feature space will have the same labels. So the algorithm finds the nearest neighbor for the new input point and assigns that neighbor’s class to the new input point.
+##### Forward Selection:
+In forward selection we first select each feature individually and calculate the accuracy. This is the locally optimal feature. We will keep on adding features in this feature set. At the end we will get a subset with all optimal features. 
 
-##### A* Manhattan Distance Heuristic:
-This algorithm is implemented by using a heuristic function that calculates the Manhattan distance between positions misplaced elements in current state compared to goal state. Distance is calculated and passed to general_search, which adds the heuristic value to the node. Based on heuristic value the nodes are prioritized  in the heap queue.
+##### Backward Elimination:
+In backward elimination we will consider all the features at the start and then we will eliminate one-one irrelevant features greedily from the subset of features. 
 
-
-
-#### OUTPUT:
-##### UCS:
-
-<!-- ![Depth 2](/Output/depth2_ucs.png) -->
-<p align="center">
-  <img src="Output/depth2_ucs.png" alt="Depth 2" width="400" height="200" />
-  <img src="Output/depth8_ucs.png" alt="Depth 8" width="400" height="195" />
-
-<div align="center">
-  <em>Depth 2</em>
-  <em style="margin-left: 70px;">Depth 8</em>
-</div>
-</p>
-
-<p align="center">
-  <img src="Output/depth16_ucs.png" alt="Depth 16" width="400" height="200" />
-</div>
-</p>
-
-##### A* Misplaced Tiles Heuristic:
-<p align="center">
-  <img src="Output/depth2_AMis.png" alt="Depth 16" width="400" height="200" />
-  <img src="Output/depth8_AMis.png" alt="Depth 2" width="400" height="195" />
-<div align="center">
-  <em>Depth 2</em>
-  <em style="margin-left: 70px;">Depth 8</em>
-</div>
-</p>
-<p align="center">
-  <img src="Output/depth_12_AMis.png" alt="Depth 16" width="400" height="200" />
-  <img src="Output/depth24_AMis.png" alt="Depth 2" width="400" height="195" />
-<div align="center">
-  <em>Depth 12</em>
-  <em style="margin-left: 70px;">Depth 24</em>
-</div>
-</p>
-
-##### A* Manhattan Distance Heuristic:
-<p align="center">
-  <img src="Output/depth2_AMAN.png" alt="Depth 16" width="400" height="200" />
-  <img src="Output/depth8_AMAN.png" alt="Depth 2" width="400" height="195" />
-<div align="center">
-  <em>Depth 2</em>
-  <em style="margin-left: 70px;">Depth 8</em>
-</div>
-</p>
-<p align="center">
-  <img src="Output/depth16_AMAN.png" alt="Depth 16" width="400" height="200" />
-  <img src="Output/depth24_AMAN.png" alt="Depth 2" width="400" height="195" />
-<div align="center">
-  <em>Depth 16</em>
-  <em style="margin-left: 70px;">Depth 24</em>
-</div>
-</p>
-
-#### References:
-[1] Numpy - https://numpy.org/devdocs/user/index.html
-[2] HeapQ - https://docs.python.org/3/library/heapq.html
-[3] Time - https://docs.python.org/3/library/time.html
-[4] A* - https://www.geeksforgeeks.org/a-search-algorithm/
 
