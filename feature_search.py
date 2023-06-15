@@ -2,7 +2,7 @@
 import pandas as pd
 from scipy.io import arff
 from sklearn.preprocessing import LabelEncoder
-
+import numpy as np
 def normalize(df):
     df.iloc[:,1:] = (df.iloc[:,1:]-df.iloc[:,1:].mean())/df.iloc[:,1:].std()
     return df
@@ -20,7 +20,7 @@ def preprocess_realworld():
 
 
 
-import numpy as np
+
 
 def nearest_neighbour(X_copy,X,i):
   temp = np.sqrt(np.add.reduce((X_copy - X[i])**2, axis=1)) #Calculate distance
@@ -56,9 +56,6 @@ def calc_accuracy(X, Y):
     np.frompyfunc(leave_one_out, 1, 0)(np.arange(len(X)))
     Accuracy = matched_count / len(Y)
     return Accuracy
-
-
-
 
 
 
@@ -118,11 +115,6 @@ def forward_selection(df,es=False):
 
 
   print(f"Fininshed!! Best feature set is {{{highest[0]}}}, which has accuracy of {round(highest[1]*100,4)}%")
-
-
-
-
-forward_selection(df)
 
 def backward_elimination(df,es=False):
   '''BPerforms backward elimination feature search to find best set of features'''
